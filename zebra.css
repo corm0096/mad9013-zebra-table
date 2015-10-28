@@ -1,0 +1,133 @@
+*
+{
+	border:0;
+	margin:0;
+}
+
+/* Mobile version, and for all widths less than 750 px.*/
+#wrapper
+{
+	width:600px;
+	font-family:sans-serif;
+}
+
+#c1
+{
+	width:5%;
+	border-right: 2px solid black;
+}
+
+#c2, #c3, #c4, #c5, #c6
+{
+	width: 19%;
+}
+
+#r1
+{
+	border-bottom: 2px solid black;
+}
+
+table
+{
+	width:600px;
+	border-collapse: collapse;
+	border:0;
+	overflow: hidden;
+}
+
+caption
+{
+	background-color: white;
+	/* To truncate the column bars, as the caption is part of the table but doesn't need a bar. */
+}
+
+#r1 th:nth-child(odd), #r3 td:nth-child(odd),#r5 td:nth-child(odd),#r7 td:nth-child(odd),#r9 td:nth-child(odd)
+{
+	background-color: hsla(180,50%,70%,0.2);
+}
+#r2 td:nth-child(even),#r4 td:nth-child(even),#r6 td:nth-child(even),#r8 td:nth-child(even)
+{
+	background-color: hsla(180,50%,70%,0.2);
+}
+#r1 th:nth-child(even), #r3 td:nth-child(even),#r5 td:nth-child(even),#r7 td:nth-child(even),#r9 td:nth-child(even)
+{
+	background-color: hsla(180,50%,50%,0.2);
+}
+#r2 td:nth-child(odd),#r4 td:nth-child(odd),#r6 td:nth-child(odd),#r8 td:nth-child(odd)
+{
+	background-color: hsla(180,50%,50%,0.2);
+}
+
+th
+{
+	font-size:150%;
+	height: 4em;
+	position:relative;
+}
+
+td
+{
+	padding: 6px;
+	height: 6em;
+	position:relative;
+}
+
+td:hover:after, th:hover:after
+{
+	left: 0;
+	top: -5000px;
+	height: 10000px;
+	width: 100%;
+	background-color:hsl(180,50%,80%);
+	content:"";
+	position:absolute;
+	z-index:-1;
+	overflow: hidden;
+}
+
+#r1:hover, #r2:hover, #r3:hover, #r4:hover, #r5:hover, #r6:hover, #r7:hover, #r8:hover, #r9:hover
+{
+	background-color:hsl(180,50%,80%);
+}
+/*600 px is when we start getting margins.*/
+@media all and (min-width: 600px)
+{
+	#wrapper
+	{
+		width:600px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	table
+	{
+		width:600px;
+	}
+}
+
+/*750px is the smallest to allow a table width of 600px as per specifications.*/
+@media all and (min-width: 750px)
+{
+	#wrapper
+	{
+		width:auto;
+		margin-left:10%;
+		margin-right:10%;
+	}
+	
+	table
+	{
+		width:auto;
+	}
+}
+
+/*1500 px table with 10% margins needs 1800 px: 1500px table +2x 150px+ margins. */
+@media all and (min-width: 1800px)
+{
+	#wrapper
+	{
+		width:1500px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
